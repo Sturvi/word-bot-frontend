@@ -1,7 +1,10 @@
 package com.example.application.views;
 
 import com.example.application.views.about.AboutView;
+import com.example.application.views.course.CoursePage;
+import com.example.application.views.exam.ExamPage;
 import com.example.application.views.helloworld.HelloWorldView;
+import com.example.application.views.student.StudentPage;
 import com.vaadin.flow.component.applayout.AppLayout;
 import com.vaadin.flow.component.applayout.DrawerToggle;
 import com.vaadin.flow.component.html.Footer;
@@ -39,7 +42,7 @@ public class MainLayout extends AppLayout {
     }
 
     private void addDrawerContent() {
-        H1 appName = new H1("word-bot-frontend");
+        H1 appName = new H1("İmtahan proqramı");
         appName.addClassNames(LumoUtility.FontSize.LARGE, LumoUtility.Margin.NONE);
         Header header = new Header(appName);
 
@@ -51,8 +54,9 @@ public class MainLayout extends AppLayout {
     private SideNav createNavigation() {
         SideNav nav = new SideNav();
 
-        nav.addItem(new SideNavItem("Hello World", HelloWorldView.class, LineAwesomeIcon.GLOBE_SOLID.create()));
-        nav.addItem(new SideNavItem("About", AboutView.class, LineAwesomeIcon.FILE.create()));
+        nav.addItem(new SideNavItem("İmtahan nəticələri", ExamPage.class, LineAwesomeIcon.USER_GRADUATE_SOLID.create()));
+        nav.addItem(new SideNavItem("Dərslər", CoursePage.class, LineAwesomeIcon.BOOK_SOLID.create()));
+        nav.addItem(new SideNavItem("Şagirdlər", StudentPage.class, LineAwesomeIcon.USER_FRIENDS_SOLID.create()));
 
         return nav;
     }
